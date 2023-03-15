@@ -9,13 +9,13 @@ function GuessInput() {
 
   function onSubmit(event) {
   	event.preventDefault();
-  	console.log(input);
+  	console.log({input});
   	setInput('');
   }
 
   return <form className="guess-input-wrapper" onSubmit={onSubmit}>
   	<label htmlFor="guess-input">Enter guess:</label>
-	<input id="guess-input" type="text" pattern="[A-Za-z]{5}" value={input} onChange={onChange} />
+	<input id="guess-input" type="text" minLength={5} maxLength={5} required pattern="[A-Za-z]{5}" title="5-letter word" value={input} onChange={onChange} />
 </form>
 }
 
